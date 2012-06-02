@@ -1,0 +1,8 @@
+- List lessons of the day
+  - bonus lessons if they have time
+- In one day, all students see same lessons
+- As students complete lessons, show tick-mark
+
+Iframe:
+- Progress bar should display
+- The notice: "You are ready to move on" must display at the appropriate stage (proficiency level)

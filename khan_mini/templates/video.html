@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Video{% endblock %}
+{% block content %}
+    <h1>Video: {{ title }}</h1>
+    <iframe src='{{ ka_url }}' border='0' width='800' height='400'></iframe>
+    <br/>
+    <a href="javascript:history.go(-1)">Back</a>
+{% endblock %}
+
+
+

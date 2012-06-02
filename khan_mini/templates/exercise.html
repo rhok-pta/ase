@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Exercise{% endblock %}
+{% block content %}
+    <h1>Exercise: {{ display_name }}</h1>
+    <iframe src='{{ khan_base_url }}{{ relative_url }}' border='0' width='800' height='400'></iframe>
+    <br/>
+    <a href="javascript:history.go(-1)">Back</a>
+{% endblock %}
+
+
+

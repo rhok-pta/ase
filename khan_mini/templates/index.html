@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+{% block content %}
+    <h1>Topics</h1>
+<ul id="topics">
+{% for item in children %}
+    {% if item.kind == "Topic" %}
+        <li><a href="index?topic={{ item.id }}">{{ item.title }}</a></li>
+    {% endif %}
+    {% if item.kind == "Video" %}
+        <li><a href="video?vid_id={{ item.id }}">Video: {{ item.title }}</a></li>
+    {% endif %}
+    {% if item.kind == "Exercise" %}
+        <li><a href="exercise?exercise_id={{ item.id }}">Exercise: {{ item.title }}</a></li>
+    {% endif %}
+{% endfor %}
+</ul>
+{% endblock %}
+
+
