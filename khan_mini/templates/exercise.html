@@ -4,7 +4,14 @@
     <h1>Exercise: {{ display_name }}</h1>
     <iframe src='{{ khan_base_url }}{{ relative_url }}' border='0' width='800' height='400'></iframe>
     <br/>
-    <a href="javascript:history.go(-1)">Back</a>
+    <b>Continue onto:</b>
+    <ul id="topics">
+    {% for item in followup %}
+        <li><a href="exercise?exercise_id={{ item.name }}&topic={{ topic }}">{{ item.display_name }}</a></li>
+    {% endfor %}
+    </ul>
+    [<a href="javascript:history.go(-1)">Back</a>]
+    [<a href="/index?topic={{ topic }}">Topic</a>]
 {% endblock %}
 
 

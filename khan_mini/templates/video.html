@@ -2,7 +2,20 @@
 {% block title %}Video{% endblock %}
 {% block content %}
     <h1>Video: {{ title }}</h1>
-    <iframe src='{{ ka_url }}' border='0' width='800' height='400'></iframe>
+    {# <iframe src='{{ ka_url }}' border='0' width='800' height='400'></iframe> #}
+    [<a href="/stream/{{ topic }}/{{ readable_id }}.flv">Download</a>]
+    <br/>
+    
+    <object id="flvPlayer" type="application/x-shockwave-flash" data="{{ khan_base_url }}/flvplayer/player_flv_maxi.swf" width="800" height="480">
+        <param name="movie" value="{{ ka_url }}/flvplayer/player_flv_maxi.swf" />
+        <param name="allowFullScreen" value="true" />
+        <param name="allowScriptAccess" value="always" />
+        <param name="FlashVars" value="flv=%2Fvideos%2F{{ topic }}%2F{{ readable_id }}.flv&amp;showstop=1&amp;showvolume=1&amp;showfullscreen=1&amp;showiconplay=1&amp;bgcolor=FFFFFF&amp;bgcolor1=80C65A&amp;bgcolor2=80C65A&amp;iconplaybgcolor=80C65A&amp;width=800&amp;height=480" />
+        <div>
+                <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>
+        </div>                
+    </object>
+    
     <br/>
     <a href="javascript:history.go(-1)">Back</a>
 {% endblock %}
