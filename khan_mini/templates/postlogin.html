@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+    <h1>Login</h1>
+    <form name="login" action="{{ post_url }}" method="get">
+        <input type="hidden" name="email" value="{{ username }}"/>
+        <input type="hidden" name="action" value="Login"/>
+        <input type="hidden" name="continue" value="http://localhost:8080/postlogin?continue=http://localhost:8081/index"/>
+    </form>
+    {{ post_url }}
+
+    <script type="text/javascript">document.forms['login'].submit()</script>
+
+{% endblock %}
